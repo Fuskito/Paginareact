@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ocultar scrollbar  */
+.no-scrollbar {
+    overflow: hidden;
+  }
+  
+  /* ocultar el scrollbar en elementos específicos */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  
+  /* Estilo para cada sección */
+  .section {
+    height: 100vh;
+    scroll-snap-align: start;
+  }
+  
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.7); 
+  }
+  
+
+  
+  
