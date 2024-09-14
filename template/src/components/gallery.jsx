@@ -7,12 +7,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 
-const Gallery = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
-
-  const slides = [
+const Gallery = ({
+  title = "Galería",
+  description = "Consulte por algunos de los siguientes modelos",
+  bgColor = "bg-gray-100",
+  slides = [
     {
       imageUrl: './src/img/galleria1.jpg',
       title: 'Ford Ranger 150',
@@ -43,14 +42,18 @@ const Gallery = () => {
       title: 'Beetle',
       description: 'Un icónico Volkswagen Beetle clásico se muestra en toda su gloria vintage. Este modelo de los años 60 presenta una carrocería de color naranja brillante, con un diseño redondeado y adorable que recuerda una era pasada. El auto, con su distintiva forma de "bicho", está estacionado sobre una calle adoquinada, resaltando su aspecto retro.',
     },
-  ];
+  ],
+}) => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   return (
-    <section className="bg-yellow-100 py-12" id="gallery">
+    <section className={`${bgColor} py-12`} id="gallery">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8" data-aos="fade-up">
-          <h2 className="text-3xl font-bold mb-2">Galería</h2>
-          <p className="text-gray-600">Consulte por algunos de los siguientes modelos</p>
+          <h2 className="text-3xl font-bold mb-2">{title}</h2>
+          <p className="text-gray-600">{description}</p>
         </div>
 
         {/* Swiper Component */}

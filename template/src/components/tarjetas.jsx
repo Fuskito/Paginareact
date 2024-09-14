@@ -2,7 +2,22 @@ import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Tarjetas = () => {
+const Tarjetas = ({
+  sectionTitle = "Venta de usados",
+  formTitle = "Publica tu auto",
+  modelLabel = "Modelo:",
+  descriptionLabel = "Descripción:",
+  imageLabel = "Foto Del Auto:",
+  backgroundColorLabel = "Color de fondo:",
+  borderColorLabel = "Color del borde:",
+  submitButtonText = "Publicar",
+  defaultImages = [
+    './src/img/usados2.jpg',
+    './src/img/usados3.jpg',
+    './src/img/usados4.jpg',
+    './src/img/usados5.jpg',
+  ],
+}) => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -12,13 +27,6 @@ const Tarjetas = () => {
   });
 
   const [cards, setCards] = useState([]);
-
-  const images = [
-    './src/img/usados2.jpg',
-    './src/img/usados3.jpg',
-    './src/img/usados4.jpg',
-    './src/img/usados5.jpg',
-  ];
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -36,7 +44,7 @@ const Tarjetas = () => {
     e.preventDefault();
     const { title, description, imageUrl, bgColor, borderColor } = formData;
 
-    const selectedImageUrl = imageUrl || images[Math.floor(Math.random() * images.length)];
+    const selectedImageUrl = imageUrl || defaultImages[Math.floor(Math.random() * defaultImages.length)];
 
     const newCard = {
       title,
@@ -60,7 +68,7 @@ const Tarjetas = () => {
   return (
     <section id="cards" className="bg-blue-50 py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8" data-aos="fade-up">Venta de usados</h2>
+        <h2 className="text-3xl font-bold text-center mb-8" data-aos="fade-up">{sectionTitle}</h2>
 
         <div id="cards-container" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {cards.map((card, index) => (
@@ -87,9 +95,9 @@ const Tarjetas = () => {
         </div>
 
         <div id="card-form-container" className="bg-white shadow-lg rounded-lg p-6" data-aos="fade-up">
-          <h3 className="text-2xl font-semibold mb-4">Publica tu auto</h3>
+          <h3 className="text-2xl font-semibold mb-4">{formTitle}</h3>
           <form id="card-form" onSubmit={handleSubmit}>
-            <label className="block text-lg font-medium mb-2" htmlFor="card-title">Modelo:</label>
+            <label className="block text-lg font-medium mb-2" htmlFor="card-title">{modelLabel}</label>
             <input
               className="w-full p-2 mb-4 border rounded-lg"
               type="text"
@@ -100,7 +108,7 @@ const Tarjetas = () => {
               required
             />
 
-            <label className="block text-lg font-medium mb-2" htmlFor="card-description">Descripción:</label>
+            <label className="block text-lg font-medium mb-2" htmlFor="card-description">{descriptionLabel}</label>
             <input
               className="w-full p-2 mb-4 border rounded-lg"
               type="text"
@@ -111,7 +119,7 @@ const Tarjetas = () => {
               required
             />
 
-            <label className="block text-lg font-medium mb-2" htmlFor="card-image">Foto Del Auto:</label>
+            <label className="block text-lg font-medium mb-2" htmlFor="card-image">{imageLabel}</label>
             <input
               className="w-full p-2 mb-4 border rounded-lg"
               type="url"
@@ -123,7 +131,7 @@ const Tarjetas = () => {
             />
 
             <h4 className="text-xl font-semibold mb-4">Personalización</h4>
-            <label className="block text-lg font-medium mb-2" htmlFor="card-bg-color">Color de fondo:</label>
+            <label className="block text-lg font-medium mb-2" htmlFor="card-bg-color">{backgroundColorLabel}</label>
             <input
               className="w-full p-2 mb-4 border rounded-lg"
               type="color"
@@ -133,7 +141,7 @@ const Tarjetas = () => {
               onChange={handleChange}
             />
 
-            <label className="block text-lg font-medium mb-2" htmlFor="card-border-color">Color del borde:</label>
+            <label className="block text-lg font-medium mb-2" htmlFor="card-border-color">{borderColorLabel}</label>
             <input
               className="w-full p-2 mb-4 border rounded-lg"
               type="color"
@@ -147,7 +155,7 @@ const Tarjetas = () => {
               type="submit"
               className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600"
             >
-              Publicar
+              {submitButtonText}
             </button>
           </form>
         </div>

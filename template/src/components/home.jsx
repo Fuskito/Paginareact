@@ -1,27 +1,34 @@
 import React from 'react';
 
-const HomeSection = () => {
+const HomeSection = ({
+  backgroundImage = './src/img/fondo.jpg',
+  title = 'Autos Motos Utilitarios',
+  titleStyles = 'text-4xl md:text-6xl font-bold mb-4',
+  sectionId = 'Home',
+  aosEffect = 'fade-up',
+  aosDuration = 1500,
+}) => {
   return (
     <section
-      id="Home"
+      id={sectionId}
       className="homepage flex items-center justify-center h-screen text-white relative"
-      data-aos="fade-up"
-      data-aos-duration="1500"
+      data-aos={aosEffect}
+      data-aos-duration={aosDuration}
     >
-       
       <img
-        src='./src/img/fondo.jpg'
+        src={backgroundImage}
         alt="Background"
         className="absolute inset-0 object-cover w-full h-full"
-      /> 
+      />
 
       <div className="content text-center relative z-10">
         <h1
-          className="text-4xl md:text-6xl font-bold mb-4"
-          style={{ fontFamily: 'Georgia, serif' }} 
-          data-aos="fade-up"
+          className={titleStyles}
+          style={{ fontFamily: 'Georgia, serif' }}
+          data-aos={aosEffect}
+          data-aos-duration={aosDuration}
         >
-          Autos Motos Utilitarios
+          {title}
         </h1>
       </div>
     </section>
