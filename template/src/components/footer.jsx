@@ -1,18 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = ({
-  contactTitle = "Contacto",
-  address = "Calle 15 CABA",
-  phone = "(11) 2477-777",
-  email = "info@gmail.com",
-  hours = "Lunes a viernes 08:00-17:00",
-  website = "http://www.tputn.com.ar",
-  websiteLabel = "www.tputn.com.ar",
-  facebookLink = "https://www.facebook.com/MaTiias97/",
-  instagramLink = "https://www.instagram.com/fuscomusic.arg/",
-  twitterLink = "https://x.com/MatiasFusco97",
-  copyrightText = "© 2024 Todos los derechos reservados",
+  contactTitle,
+  address,
+  phone,
+  email,
+  hours,
+  website,
+  websiteLabel,
+  facebookLink,
+  instagramLink,
+  twitterLink,
+  copyrightText,
 }) => {
   return (
     <footer className="bg-black text-white py-8">
@@ -59,6 +60,34 @@ const Footer = ({
       </div>
     </footer>
   );
+};
+
+Footer.propTypes = {
+  contactTitle: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  hours: PropTypes.string.isRequired,
+  website: PropTypes.string.isRequired,
+  websiteLabel: PropTypes.string.isRequired,
+  facebookLink: PropTypes.string.isRequired,
+  instagramLink: PropTypes.string.isRequired,
+  twitterLink: PropTypes.string.isRequired,
+  copyrightText: PropTypes.string.isRequired,
+};
+
+Footer.defaultProps = {
+  contactTitle: "Contacto",
+  address: "Calle 15 CABA",
+  phone: "(11) 2477-777",
+  email: "info@gmail.com",
+  hours: "Lunes a viernes 08:00-17:00",
+  website: "http://www.tputn.com.ar",
+  websiteLabel: "www.tputn.com.ar",
+  facebookLink: "https://www.facebook.com/MaTiias97/",
+  instagramLink: "https://www.instagram.com/fuscomusic.arg/",
+  twitterLink: "https://x.com/MatiasFusco97",
+  copyrightText: "© 2024 Todos los derechos reservados",
 };
 
 export default Footer;

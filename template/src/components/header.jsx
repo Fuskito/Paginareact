@@ -1,16 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { FaGlobe, FaSearch } from 'react-icons/fa';
 
 const Header = ({
-  logoText = "Página Web",
-  menuItems = [
-    { href: "#Home", text: "Home" },
-    { href: "#services", text: "Servicios" },
-    { href: "#gallery", text: "Galería" },
-    { href: "#cards", text: "Venta" },
-    { href: "#contact", text: "Contacto" },
-  ],
-  searchPlaceholder = "Buscar",
+  logoText,
+  menuItems,
+  searchPlaceholder,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
@@ -94,6 +89,29 @@ const Header = ({
       </nav>
     </header>
   );
+};
+
+Header.propTypes = {
+  logoText: PropTypes.string.isRequired,
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      href: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  searchPlaceholder: PropTypes.string.isRequired,
+};
+
+Header.defaultProps = {
+  logoText: "Página Web",
+  menuItems: [
+    { href: "#Home", text: "Home" },
+    { href: "#services", text: "Servicios" },
+    { href: "#gallery", text: "Galería" },
+    { href: "#cards", text: "Venta" },
+    { href: "#contact", text: "Contacto" },
+  ],
+  searchPlaceholder: "Buscar",
 };
 
 export default Header;

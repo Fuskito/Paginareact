@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Contact = ({
-  title = "Contacto",
-  description = "Complete el formulario y nos ponemos en contacto",
-  bgColor = "bg-blue-100",
-  buttonText = "Enviar Mensaje",
-  inputBgColor = "bg-white",
-  inputBorderColor = "border-gray-300",
-  buttonColor = "bg-blue-500",
-  buttonHoverColor = "bg-blue-600",
+  title,
+  description,
+  bgColor,
+  buttonText,
+  inputBgColor,
+  inputBorderColor,
+  buttonColor,
+  buttonHoverColor,
 }) => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -56,6 +57,28 @@ const Contact = ({
       </div>
     </section>
   );
+};
+
+Contact.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  bgColor: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  inputBgColor: PropTypes.string.isRequired,
+  inputBorderColor: PropTypes.string.isRequired,
+  buttonColor: PropTypes.string.isRequired,
+  buttonHoverColor: PropTypes.string.isRequired,
+};
+
+Contact.defaultProps = {
+  title: 'Contacto',
+  description: 'Complete el formulario y nos ponemos en contacto',
+  bgColor: 'bg-blue-100',
+  buttonText: 'Enviar Mensaje',
+  inputBgColor: 'bg-white',
+  inputBorderColor: 'border-gray-300',
+  buttonColor: 'bg-blue-500',
+  buttonHoverColor: 'bg-blue-600',
 };
 
 export default Contact;
