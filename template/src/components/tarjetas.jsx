@@ -1,22 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import PropTypes from 'prop-types';
 
 const Tarjetas = ({
-  sectionTitle = "Venta de usados",
-  formTitle = "Publica tu auto",
-  modelLabel = "Modelo:",
-  descriptionLabel = "Descripción:",
-  imageLabel = "Foto Del Auto:",
-  backgroundColorLabel = "Color de fondo:",
-  borderColorLabel = "Color del borde:",
-  submitButtonText = "Publicar",
-  defaultImages = [
-    './src/img/usados2.jpg',
-    './src/img/usados3.jpg',
-    './src/img/usados4.jpg',
-    './src/img/usados5.jpg',
-  ],
+  sectionTitle,
+  formTitle,
+  modelLabel,
+  descriptionLabel,
+  imageLabel,
+  backgroundColorLabel,
+  borderColorLabel,
+  submitButtonText,
+  defaultImages,
+  personalization,
 }) => {
   const [formData, setFormData] = useState({
     title: '',
@@ -130,7 +127,7 @@ const Tarjetas = ({
               placeholder="https://picsum.photos/200"
             />
 
-            <h4 className="text-xl font-semibold mb-4">Personalización</h4>
+            <h4 className="text-xl font-semibold mb-4">{personalization}</h4>
             <label className="block text-lg font-medium mb-2" htmlFor="card-bg-color">{backgroundColorLabel}</label>
             <input
               className="w-full p-2 mb-4 border rounded-lg"
@@ -162,6 +159,38 @@ const Tarjetas = ({
       </div>
     </section>
   );
+};
+
+// Añadiendo PropTypes con validación isRequired
+Tarjetas.propTypes = {
+  sectionTitle: PropTypes.string.isRequired,
+  formTitle: PropTypes.string.isRequired,
+  modelLabel: PropTypes.string.isRequired,
+  descriptionLabel: PropTypes.string.isRequired,
+  imageLabel: PropTypes.string.isRequired,
+  backgroundColorLabel: PropTypes.string.isRequired,
+  borderColorLabel: PropTypes.string.isRequired,
+  submitButtonText: PropTypes.string.isRequired,
+  defaultImages: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+// Agregando defaultProps
+Tarjetas.defaultProps = {
+  sectionTitle: "Venta de usados",
+  formTitle: "Publica tu auto",
+  modelLabel: "Modelo:",
+  descriptionLabel: "Descripción:",
+  imageLabel: "Foto Del Auto:",
+  backgroundColorLabel: "Color de fondo:",
+  borderColorLabel: "Color del borde:",
+  submitButtonText: "Publicar",
+  personalization: "Personalización",
+  defaultImages: [
+    './src/img/usados2.jpg',
+    './src/img/usados3.jpg',
+    './src/img/usados4.jpg',
+    './src/img/usados5.jpg',
+  ],
 };
 
 export default Tarjetas;
