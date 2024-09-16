@@ -95,12 +95,7 @@ const Header = ({
 
 Header.propTypes = {
   logoText: PropTypes.string.isRequired,
-  menuItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      href: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  menuitems: PropTypes.arrayOf(PropTypes.string).isRequired,
   searchPlaceholder: PropTypes.string.isRequired,
   brandUrl: PropTypes.string.isRequired, 
 };

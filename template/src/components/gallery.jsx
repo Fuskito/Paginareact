@@ -62,13 +62,7 @@ Gallery.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   bgColor: PropTypes.string.isRequired,
-  slides: PropTypes.arrayOf(
-    PropTypes.shape({
-      imageUrl: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-    })
-  ).isRequired,
+  slides: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 Gallery.defaultProps = {
