@@ -6,6 +6,7 @@ const Header = ({
   logoText,
   menuItems,
   searchPlaceholder,
+  brandUrl,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
@@ -38,7 +39,8 @@ const Header = ({
   return (
     <header className={`bg-black fixed top-0 left-0 w-full z-10 shadow-md transition-transform duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
       <nav className="container mx-auto px-4 lg:px-8 flex flex-wrap items-center justify-between p-5">
-        <a className="text-xl font-bold text-white flex items-center" href="#">
+        {/* Enlace dinámico en el logo */}
+        <a className="text-xl font-bold text-white flex items-center" href={brandUrl}>
           <FaGlobe className="mr-2" /> {logoText}
         </a>
         <button
@@ -100,18 +102,22 @@ Header.propTypes = {
     })
   ).isRequired,
   searchPlaceholder: PropTypes.string.isRequired,
+  brandUrl: PropTypes.string.isRequired, 
 };
 
 Header.defaultProps = {
   logoText: "Página Web",
+  brandUrl: "#Home",
+  searchPlaceholder: "Buscar",
   menuItems: [
     { href: "#Home", text: "Home" },
     { href: "#services", text: "Servicios" },
     { href: "#gallery", text: "Galería" },
     { href: "#cards", text: "Venta" },
     { href: "#contact", text: "Contacto" },
+     
   ],
-  searchPlaceholder: "Buscar",
+  
 };
 
 export default Header;
