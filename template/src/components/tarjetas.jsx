@@ -161,7 +161,7 @@ const Tarjetas = ({
   );
 };
 
-// Añadiendo PropTypes con validación isRequired
+
 Tarjetas.propTypes = {
   sectionTitle: PropTypes.string.isRequired,
   formTitle: PropTypes.string.isRequired,
@@ -174,7 +174,7 @@ Tarjetas.propTypes = {
   defaultImages: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-// Agregando defaultProps
+
 Tarjetas.defaultProps = {
   sectionTitle: "Venta de usados",
   formTitle: "Publica tu auto",
