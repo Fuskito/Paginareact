@@ -3,10 +3,17 @@ import PropTypes from 'prop-types';
 import { FaGlobe, FaSearch } from 'react-icons/fa';
 
 const Header = ({
-  logoText,
-  menuItems,
-  searchPlaceholder,
-  brandUrl,
+  logoText = "Página Web",
+  brandUrl = "#Home",
+  searchPlaceholder = "Buscar",
+  menuItems = [
+    { href: "#Home", text: "Home" },
+    { href:  "#services", text: "Servicios" },
+    { href: "#gallery", text: "Galería" },
+    { href: "#cards", text: "Venta" },
+    { href: "#contact", text: "Contacto" },
+     
+  ],
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
@@ -94,25 +101,12 @@ const Header = ({
 };
 
 Header.propTypes = {
-  logoText: PropTypes.string.isRequired,
-  menuitems: PropTypes.arrayOf(PropTypes.string).isRequired,
-  searchPlaceholder: PropTypes.string.isRequired,
-  brandUrl: PropTypes.string.isRequired, 
+  logoText: PropTypes.string,
+  menuitems: PropTypes.arrayOf(PropTypes.string),
+  searchPlaceholder: PropTypes.string,
+  brandUrl: PropTypes.string, 
 };
 
-Header.defaultProps = {
-  logoText: "Página Web",
-  brandUrl: "#Home",
-  searchPlaceholder: "Buscar",
-  menuItems: [
-    { href: "#Home", text: "Home" },
-    { href: "#services", text: "Servicios" },
-    { href: "#gallery", text: "Galería" },
-    { href: "#cards", text: "Venta" },
-    { href: "#contact", text: "Contacto" },
-     
-  ],
-  
-};
+
 
 export default Header;

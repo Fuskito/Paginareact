@@ -4,14 +4,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Contact = ({
-  title,
-  description,
-  bgColor,
-  buttonText,
-  inputBgColor,
-  inputBorderColor,
-  buttonColor,
-  buttonHoverColor,
+  title = 'Contacto',
+  description = 'Complete el formulario y nos ponemos en contacto',
+  bgColor = 'bg-blue-100',
+  buttonText = 'Enviar Mensaje',
+  inputBgColor = 'bg-white',
+  inputBorderColor = 'border-gray-300',
+  buttonColor = 'bg-blue-500',
+  buttonHoverColor = 'bg-blue-600',
 }) => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -70,15 +70,6 @@ Contact.propTypes = {
   buttonHoverColor: PropTypes.string.isRequired,
 };
 
-Contact.defaultProps = {
-  title: 'Contacto',
-  description: 'Complete el formulario y nos ponemos en contacto',
-  bgColor: 'bg-blue-100',
-  buttonText: 'Enviar Mensaje',
-  inputBgColor: 'bg-white',
-  inputBorderColor: 'border-gray-300',
-  buttonColor: 'bg-blue-500',
-  buttonHoverColor: 'bg-blue-600',
-};
+
 
 export default Contact;

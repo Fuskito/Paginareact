@@ -4,16 +4,21 @@ import 'aos/dist/aos.css';
 import PropTypes from 'prop-types';
 
 const Tarjetas = ({
-  sectionTitle,
-  formTitle,
-  modelLabel,
-  descriptionLabel,
-  imageLabel,
-  backgroundColorLabel,
-  borderColorLabel,
-  submitButtonText,
-  defaultImages,
-  personalization,
+  sectionTitle = "Venta de usados",
+  formTitle = "Publica tu auto",
+  modelLabel = "Modelo:",
+  descriptionLabel = "Descripción:",
+  imageLabel = "Foto Del Auto:",
+  backgroundColorLabel = "Color de fondo:",
+  borderColorLabel = "Color del borde:",
+  submitButtonText = "Publicar",
+  personalization = "Personalización",
+  defaultImages = [
+    './src/img/usados2.jpg',
+    './src/img/usados3.jpg',
+    './src/img/usados4.jpg',
+    './src/img/usados5.jpg',
+  ],
 }) => {
   const [formData, setFormData] = useState({
     title: '',
@@ -175,22 +180,7 @@ Tarjetas.propTypes = {
 };
 
 
-Tarjetas.defaultProps = {
-  sectionTitle: "Venta de usados",
-  formTitle: "Publica tu auto",
-  modelLabel: "Modelo:",
-  descriptionLabel: "Descripción:",
-  imageLabel: "Foto Del Auto:",
-  backgroundColorLabel: "Color de fondo:",
-  borderColorLabel: "Color del borde:",
-  submitButtonText: "Publicar",
-  personalization: "Personalización",
-  defaultImages: [
-    './src/img/usados2.jpg',
-    './src/img/usados3.jpg',
-    './src/img/usados4.jpg',
-    './src/img/usados5.jpg',
-  ],
-};
+
+
 
 export default Tarjetas;

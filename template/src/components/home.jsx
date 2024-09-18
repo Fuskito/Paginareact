@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const HomeSection = ({
-  backgroundImage,
-  title,
-  titleStyles,
-  sectionId,
-  aosEffect,
-  aosDuration,
+  backgroundImage = './src/img/fondo.jpg',
+  title = 'Autos Motos Utilitarios',
+  titleStyles = 'text-4xl md:text-6xl font-bold mb-4',
+  sectionId = 'Home',
+  aosEffect = 'fade-up',
+  aosDuration = 1500,
 }) => {
   return (
     <section
@@ -45,13 +45,6 @@ HomeSection.propTypes = {
   aosDuration: PropTypes.number.isRequired,
 };
 
-HomeSection.defaultProps = {
-  backgroundImage: './src/img/fondo.jpg',
-  title: 'Autos Motos Utilitarios',
-  titleStyles: 'text-4xl md:text-6xl font-bold mb-4',
-  sectionId: 'Home',
-  aosEffect: 'fade-up',
-  aosDuration: 1500,
-};
+
 
 export default HomeSection;
