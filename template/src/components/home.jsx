@@ -37,12 +37,12 @@ const HomeSection = ({
 };
 
 HomeSection.propTypes = {
-  backgroundImage: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  titleStyles: PropTypes.string.isRequired,
-  sectionId: PropTypes.string.isRequired,
-  aosEffect: PropTypes.string.isRequired,
-  aosDuration: PropTypes.number.isRequired,
+  backgroundImage: PropTypes.string,
+  title: PropTypes.string,
+  titleStyles: PropTypes.string,
+  sectionId: PropTypes.string,
+  aosEffect: PropTypes.string,
+  aosDuration: PropTypes.number,
 };
 
 

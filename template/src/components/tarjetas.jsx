@@ -168,15 +168,15 @@ const Tarjetas = ({
 
 
 Tarjetas.propTypes = {
-  sectionTitle: PropTypes.string.isRequired,
-  formTitle: PropTypes.string.isRequired,
-  modelLabel: PropTypes.string.isRequired,
-  descriptionLabel: PropTypes.string.isRequired,
-  imageLabel: PropTypes.string.isRequired,
-  backgroundColorLabel: PropTypes.string.isRequired,
-  borderColorLabel: PropTypes.string.isRequired,
-  submitButtonText: PropTypes.string.isRequired,
-  defaultImages: PropTypes.arrayOf(PropTypes.string).isRequired,
+  sectionTitle: PropTypes.string,
+  formTitle: PropTypes.string,
+  modelLabel: PropTypes.string,
+  descriptionLabel: PropTypes.string,
+  imageLabel: PropTypes.string,
+  backgroundColorLabel: PropTypes.string,
+  borderColorLabel: PropTypes.string,
+  submitButtonText: PropTypes.string,
+  defaultImages: PropTypes.arrayOf(PropTypes.string),
 };
 
 

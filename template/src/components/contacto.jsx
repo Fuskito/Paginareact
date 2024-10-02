@@ -60,14 +60,14 @@ const Contact = ({
 };
 
 Contact.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  bgColor: PropTypes.string.isRequired,
-  buttonText: PropTypes.string.isRequired,
-  inputBgColor: PropTypes.string.isRequired,
-  inputBorderColor: PropTypes.string.isRequired,
-  buttonColor: PropTypes.string.isRequired,
-  buttonHoverColor: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  bgColor: PropTypes.string,
+  buttonText: PropTypes.string,
+  inputBgColor: PropTypes.string,
+  inputBorderColor: PropTypes.string,
+  buttonColor: PropTypes.string,
+  buttonHoverColor: PropTypes.string,
 };
 
 

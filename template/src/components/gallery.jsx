@@ -55,6 +55,7 @@ const Gallery = ({
         <div className="text-center mb-8" data-aos="fade-up">
           <h2 className="text-3xl font-bold mb-2">{title}</h2>
           <p className="text-gray-600">{description}</p>
+          
         </div>
 
         {/* Swiper Component */}
@@ -90,10 +91,10 @@ const Gallery = ({
 };
 
 Gallery.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  bgColor: PropTypes.string.isRequired,
-  slides: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  bgColor: PropTypes.string,
+  slides: PropTypes.arrayOf(PropTypes.string),
 };
 
 

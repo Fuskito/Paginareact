@@ -70,8 +70,8 @@ const Services = ({
 };
 
 Services.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  description: PropTypes.string,
   services: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -82,7 +82,7 @@ Services.propTypes = {
       iconColor: PropTypes.string.isRequired,
       delay: PropTypes.number.isRequired,
     })
-  ).isRequired,
+  ),
 };
 
 

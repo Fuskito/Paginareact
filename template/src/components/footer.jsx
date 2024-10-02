@@ -63,17 +63,17 @@ const Footer = ({
 };
 
 Footer.propTypes = {
-  contactTitle: PropTypes.string.isRequired,
-  address: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  hours: PropTypes.string.isRequired,
-  website: PropTypes.string.isRequired,
-  websiteLabel: PropTypes.string.isRequired,
-  facebookLink: PropTypes.string.isRequired,
-  instagramLink: PropTypes.string.isRequired,
-  twitterLink: PropTypes.string.isRequired,
-  copyrightText: PropTypes.string.isRequired,
+  contactTitle: PropTypes.string,
+  address: PropTypes.string,
+  phone: PropTypes.string,
+  email: PropTypes.string,
+  hours: PropTypes.string,
+  website: PropTypes.string,
+  websiteLabel: PropTypes.string,
+  facebookLink: PropTypes.string,
+  instagramLink: PropTypes.string,
+  twitterLink: PropTypes.string,
+  copyrightText: PropTypes.string,
 };
 
 
